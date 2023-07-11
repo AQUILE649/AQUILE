@@ -1,0 +1,32 @@
+def read_file(filename):
+    with open(filename, 'r') as file:
+        data = file.read()
+    return data
+
+def read_first_n_lines(filename, n):
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+    return lines[:n]
+
+def read_last_n_lines(filename, n):
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+    return lines[-n:]
+
+def count_words(filename):
+    with open(filename, 'r') as file:
+        data = file.read()
+        words = data.split()
+    return len(words)
+
+# Bonus function to read last n lines
+def read_last_n_lines(filename, n):
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+    return lines[-n:]
+
+file_contents = read_file('python.txt')
+first_lines = read_first_n_lines('python.txt', 5)
+last_lines = read_last_n_lines('python.txt', 3)
+word_count = count_words('python.txt')
+last_lines_bonus = read_last_n_lines('python.txt', 10)
